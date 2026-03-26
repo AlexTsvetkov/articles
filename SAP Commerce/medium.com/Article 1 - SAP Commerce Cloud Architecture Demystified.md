@@ -27,25 +27,17 @@ It's not a lightweight microservice. It's a "modulith" — a monolithic applicat
 
 ## The Architecture at 30,000 Feet
 
-```
-┌─────────────────────────────────────────────────────────┐
-│  CLIENT: Spartacus (Angular SPA) / Mobile / Custom SPA  │
-└────────────────────────┬────────────────────────────────┘
-                         │ REST/JSON
-┌────────────────────────▼────────────────────────────────┐
-│  OCC API LAYER: Controllers → WsDTOs → OAuth2           │
-└────────────────────────┬────────────────────────────────┘
-                         │
-┌────────────────────────▼────────────────────────────────┐
-│  APPLICATION: Facades → Services → DAOs → Models        │
-└────────────────────────┬────────────────────────────────┘
-                         │ JDBC
-┌────────────────────────▼────────────────────────────────┐
-│  PERSISTENCE: SAP HANA / MySQL + Solr + Media Storage   │
-└─────────────────────────────────────────────────────────┘
-```
+The platform is organized into four layers, each with a strict dependency direction (top calls down, never up):
 
-Each layer has a specific responsibility and a strict dependency direction. Let me break down what actually matters.
+**1. Client Layer** — Composable Storefront (Spartacus), mobile apps, or any custom SPA communicating over REST/JSON.
+
+**2. OCC API Layer** — Spring `@Controller` classes exposing RESTful endpoints under `/occ/v2/`. Uses WsDTO objects as the API contract, Orika Mappers for translation, and OAuth2 for authentication.
+
+**3. Application Layer** — Where business logic lives. Follows the chain: **Facades** (orchestrate services, convert Models to DTOs) → **Services** (core business logic on Models) → **DAOs** (FlexibleSearch queries) → **Model objects** (generated from `items.xml`). Strategies and hooks provide pluggable business rules.
+
+**4. Persistence Layer** — RDBMS (SAP HANA in CCv2, MySQL/HSQLDB for local dev) accessed via JDBC. Solr handles product search with faceting. Media storage supports local filesystem, S3, or Azure blob.
+
+Each layer has a specific responsibility. Let me break down what actually matters.
 
 ---
 
@@ -69,12 +61,13 @@ myextension/
 The `extensioninfo.xml` declares dependencies via `<requires-extension>`. At startup, the platform resolves the full dependency graph and loads extensions in order.
 
 **Extensions come in four flavors:**
+
 1. **Platform extensions** (`bin/platform/ext/`) — core infrastructure
 2. **Commerce extensions** (`bin/modules/`) — business features
 3. **Custom extensions** (`bin/custom/`) — your project code
 4. **AddOns** — overlays on other extensions (legacy pattern)
 
-> 💡 **Key insight**: In CCv2 (Cloud), `localextensions.xml` is auto-generated from the `extensions` list in your `manifest.json`. You control your extension set from one place.
+> **Key insight**: In CCv2 (Cloud), `localextensions.xml` is auto-generated from the `extensions` list in your `manifest.json`. You control your extension set from one place.
 
 ---
 
@@ -116,12 +109,10 @@ After `ant build`, the platform generates `GeneratedLoyaltyTransactionModel.java
 
 **The comparison with JPA is stark:**
 
-| JPA/Hibernate | SAP Commerce |
-|---|---|
-| `@Entity` annotations | `items.xml` XML |
-| Flyway migrations | `ant updatesystem` |
-| You write entities | Platform generates models |
-| JPQL | FlexibleSearch |
+- In **JPA/Hibernate** you use `@Entity` annotations → in **SAP Commerce** you use `items.xml` XML
+- In **JPA** you run Flyway migrations → in **SAP Commerce** you run `ant updatesystem`
+- In **JPA** you write entity classes yourself → in **SAP Commerce** the platform generates models from XML
+- In **JPA** you query with JPQL → in **SAP Commerce** you query with FlexibleSearch
 
 ---
 
@@ -213,14 +204,14 @@ After working on multiple SAP Commerce projects, I've seen the same mistakes rep
 
 ## When to Customize vs. Extend vs. Use OOTB
 
-| Approach | When | Risk |
-|---|---|---|
-| Out of the Box | Matches 80%+ of requirements | Low |
-| Configuration | Adjustable via properties/ImpEx | Low |
-| Extend (add populator/strategy/interceptor) | Need additive behavior | Medium |
-| Override (replace bean) | Need to change existing behavior | Medium-High |
-| Custom Extension | New domain not covered by OOTB | High |
-| Modify OOTB Code | **NEVER** | 🚫 Critical |
+Here's how I think about the customization spectrum:
+
+- **Out of the Box** — Use when it matches 80%+ of requirements. Risk: Low.
+- **Configuration** (properties/ImpEx) — Use when behavior is adjustable without code. Risk: Low.
+- **Extend** (add populator/strategy/interceptor) — Use when you need additive behavior. Risk: Medium.
+- **Override** (replace Spring bean) — Use when you need to change existing behavior. Risk: Medium-High.
+- **Custom Extension** — Use for new domains not covered by OOTB. Risk: High.
+- **Modify OOTB Code** — **NEVER do this.** Risk: Critical. It breaks upgrades.
 
 **Golden rule**: Never modify `bin/platform/` or `bin/modules/`. Always work through your own extensions.
 
@@ -237,7 +228,3 @@ Once these patterns click, everything starts making sense — and you'll be able
 ---
 
 *What's the most surprising thing you discovered when you first worked with SAP Commerce? I'd love to hear your experiences in the comments.*
-
----
-
-**Suggested Tags:** `SAP Commerce` `Software Architecture` `Java` `Enterprise Software` `Cloud`
