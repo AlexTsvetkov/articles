@@ -14,7 +14,7 @@ Write a detailed, practical article titled "SAP Commerce Cloud Architecture Demy
 - Common architectural mistakes new developers make and how to avoid them
 - When to customize vs. when to extend vs. when to use out-of-the-box features
 
-Tone: Professional but accessible, written from hands-on experience. Use ASCII architecture diagrams where appropriate and include code/configuration examples. Target audience: Java developers new to SAP Commerce or mid-level developers wanting deeper understanding. Length: ~3000-4000 words.
+Tone: Professional but accessible, written from hands-on experience. Go deep into technical details — explain internal mechanisms, include class names, interface hierarchies, and platform internals where relevant. Use ASCII architecture diagrams where appropriate and include substantial code/configuration examples. Target audience: Java developers new to SAP Commerce or mid-level developers wanting deeper understanding. No word limit — cover each topic thoroughly.
 
 ## Article 2: Mastering ImpEx in SAP Commerce: From Basics to Advanced Patterns
 ### Prompt:
@@ -32,7 +32,7 @@ Write a comprehensive article titled "Mastering ImpEx in SAP Commerce: From Basi
 - Common pitfalls and troubleshooting: "Could not resolve item", duplicate unique keys, encoding issues
 - Real-world tips from production experience
 
-Tone: Tutorial-style with progressive complexity. Include many practical ImpEx code examples that readers can copy and adapt. Target audience: SAP Commerce developers at all levels. Length: ~3500-4500 words.
+Tone: Tutorial-style with progressive complexity. Include many practical ImpEx code examples that readers can copy and adapt. Go deep into technical details — explain internal mechanisms, include class names, interface hierarchies, and platform internals where relevant. Target audience: SAP Commerce developers at all levels. No word limit — cover each topic thoroughly.
 
 ## Article 3: FlexibleSearch Queries in SAP Commerce: The Complete Developer's Guide
 ### Prompt:
@@ -51,7 +51,7 @@ Write a thorough article titled "FlexibleSearch Queries in SAP Commerce: The Com
 - Real-world complex query examples from production systems
 - Top 10 FlexibleSearch mistakes and how to fix them
 
-Tone: Practical and example-driven. Every concept should be illustrated with a working query example. Target audience: SAP Commerce developers who want to master data querying. Length: ~3000-4000 words.
+Tone: Practical and example-driven. Every concept should be illustrated with a working query example. Go deep into technical details — explain internal mechanisms, query execution internals, and platform behavior where relevant. Target audience: SAP Commerce developers who want to master data querying. No word limit — cover each topic thoroughly.
 
 ## Article 4: Performance Optimization in SAP Commerce Cloud: Lessons from Production
 ### Prompt:
@@ -70,7 +70,7 @@ Write an in-depth article titled "Performance Optimization in SAP Commerce Cloud
 - Real-world performance war stories: what went wrong, how we diagnosed it, and the fix
 - Performance checklist for production readiness
 
-Tone: Experience-driven and actionable. Include configuration examples, property settings, and before/after metrics where possible. Target audience: SAP Commerce developers and architects responsible for production systems. Length: ~3500-4500 words.
+Tone: Experience-driven and actionable. Include configuration examples, property settings, and before/after metrics where possible. Go deep into technical details — explain internal mechanisms, JVM internals, database behavior, and platform architecture where relevant. Target audience: SAP Commerce developers and architects responsible for production systems. No word limit — cover each topic thoroughly.
 
 ## Article 5: Deploying SAP Commerce to CCv2: A Complete Guide to Cloud Deployment
 ### Prompt:
@@ -90,7 +90,7 @@ Write a detailed article titled "Deploying SAP Commerce to CCv2: A Complete Guid
 - Migration from on-premise to CCv2: key considerations and gotchas
 - Best practices and common deployment mistakes to avoid
 
-Tone: Step-by-step practical guide with real configuration examples. Include manifest.json snippets, API curl commands, and property configurations. Target audience: SAP Commerce developers and DevOps engineers deploying to CCv2. Length: ~3500-4500 words.
+Tone: Step-by-step practical guide with real configuration examples. Include manifest.json snippets, API curl commands, and property configurations. Go deep into technical details — explain internal mechanisms, deployment internals, and infrastructure architecture where relevant. Target audience: SAP Commerce developers and DevOps engineers deploying to CCv2. No word limit — cover each topic thoroughly.
 
 ## Article 6: Building Custom Extensions in SAP Commerce: Best Practices and Patterns
 ### Prompt:
@@ -110,7 +110,7 @@ Write a practical article titled "Building Custom Extensions in SAP Commerce: Be
 - Code organization patterns for large projects: core/facades/storefront/backoffice extension split
 - Common mistakes: over-customization, breaking upgrade paths, ignoring the extension lifecycle
 
-Tone: Hands-on tutorial with progressive complexity. Include complete code examples (Java, Spring XML, items.xml). Target audience: SAP Commerce developers building custom functionality. Length: ~3500-4500 words.
+Tone: Hands-on tutorial with progressive complexity. Include complete code examples (Java, Spring XML, items.xml). Go deep into technical details — explain internal mechanisms, class hierarchies, Spring context behavior, and platform lifecycle where relevant. Target audience: SAP Commerce developers building custom functionality. No word limit — cover each topic thoroughly.
 
 ## Article 7: SAP Commerce Catalog System and Synchronization: A Deep Dive
 ### Prompt:
@@ -130,7 +130,7 @@ Write a comprehensive article titled "SAP Commerce Catalog System and Synchroniz
 - Best practices for catalog design in large-scale projects
 - Real-world patterns from enterprise implementations
 
-Tone: Architectural and practical, explaining both the "why" and the "how." Include ImpEx examples for catalog setup and sync configuration. Target audience: SAP Commerce developers and solution architects. Length: ~3000-4000 words.
+Tone: Architectural and practical, explaining both the "why" and the "how." Include ImpEx examples for catalog setup and sync configuration. Go deep into technical details — explain internal synchronization mechanisms, catalog version resolution internals, and platform behavior where relevant. Target audience: SAP Commerce developers and solution architects. No word limit — cover each topic thoroughly.
 
 ## Article 8: Extending the OCC REST API in SAP Commerce: Building Modern Commerce APIs
 ### Prompt:
@@ -151,7 +151,7 @@ Write a detailed article titled "Extending the OCC REST API in SAP Commerce: Bui
 - Testing OCC APIs: integration testing, Postman collections, automated API tests
 - Real-world tips for building APIs that power Spartacus/Composable Storefront
 
-Tone: Tutorial-style with complete code examples. Include Java code, Spring configuration, and curl command examples for testing. Target audience: SAP Commerce developers building or extending REST APIs. Length: ~3000-4000 words.
+Tone: Tutorial-style with complete code examples. Include Java code, Spring configuration, and curl command examples for testing. Go deep into technical details — explain internal request processing, DTO mapping internals, and security architecture where relevant. Target audience: SAP Commerce developers building or extending REST APIs. No word limit — cover each topic thoroughly.
 
 ## Article 9: SAP Commerce Composable Storefront (Spartacus): Architecture and Customization Guide
 ### Prompt:
@@ -172,7 +172,7 @@ Write a thorough article titled "SAP Commerce Composable Storefront (Spartacus):
 - Upgrading Spartacus: version migration strategies, breaking changes, schematics
 - Common customization patterns from real projects
 
-Tone: Practical and architecture-focused. Include TypeScript/Angular code examples and configuration snippets. Target audience: frontend developers working with SAP Commerce Composable Storefront. Length: ~3500-4500 words.
+Tone: Practical and architecture-focused. Include TypeScript/Angular code examples and configuration snippets. Go deep into technical details — explain Angular internals, NgRx state management patterns, CMS rendering pipeline, and SSR architecture where relevant. Target audience: frontend developers working with SAP Commerce Composable Storefront. No word limit — cover each topic thoroughly.
 
 ## Article 10: Data Migration Strategies for SAP Commerce Projects
 ### Prompt:
@@ -194,7 +194,7 @@ Write a practical article titled "Data Migration Strategies for SAP Commerce Pro
 - Timeline and cutover planning: minimizing downtime, go-live checklist
 - Real-world migration war stories and lessons learned
 
-Tone: Project-focused and experience-driven. Include ImpEx examples, scripts, and checklists. Target audience: SAP Commerce developers and project managers involved in implementation projects. Length: ~3000-4000 words.
+Tone: Project-focused and experience-driven. Include ImpEx examples, scripts, and checklists. Go deep into technical details — explain data loading internals, Hot Folder processing mechanisms, and platform import architecture where relevant. Target audience: SAP Commerce developers and project managers involved in implementation projects. No word limit — cover each topic thoroughly.
 
 ## Article 11: Caching Strategies in SAP Commerce Cloud: A Production-Ready Guide
 ### Prompt:
@@ -216,7 +216,7 @@ Write an in-depth article titled "Caching Strategies in SAP Commerce Cloud: A Pr
 - Configuration examples for different deployment sizes (small, medium, large)
 - Production checklist for cache configuration
 
-Tone: Technical and production-focused. Include property configurations, monitoring queries, and sizing recommendations. Target audience: SAP Commerce developers and operations engineers. Length: ~3000-4000 words.
+Tone: Technical and production-focused. Include property configurations, monitoring queries, and sizing recommendations. Go deep into technical details — explain cache internals, EHCache region behavior, invalidation propagation, and cluster cache synchronization where relevant. Target audience: SAP Commerce developers and operations engineers. No word limit — cover each topic thoroughly.
 
 ## Article 12: Testing in SAP Commerce: Unit Tests, Integration Tests, and Quality Assurance
 ### Prompt:
@@ -238,7 +238,7 @@ Write a practical article titled "Testing in SAP Commerce: Unit Tests, Integrati
 - Common testing challenges and how to overcome them
 - Best practices for building a testing culture on SAP Commerce projects
 
-Tone: Hands-on with code examples for each testing pattern. Include Java test code, configuration snippets, and CI/CD pipeline examples. Target audience: SAP Commerce developers who want to improve code quality. Length: ~3000-4000 words.
+Tone: Hands-on with code examples for each testing pattern. Include Java test code, configuration snippets, and CI/CD pipeline examples. Go deep into technical details — explain test framework internals, platform test context lifecycle, and CCv2 test execution mechanisms where relevant. Target audience: SAP Commerce developers who want to improve code quality. No word limit — cover each topic thoroughly.
 
 ## Article 13: Troubleshooting SAP Commerce in Production: A Developer's Survival Guide
 ### Prompt:
@@ -260,7 +260,7 @@ Write a practical, experience-driven article titled "Troubleshooting SAP Commerc
 - Building a runbook: what to document for operations teams
 - Post-mortem practices: learning from incidents
 
-Tone: War-story style with practical, actionable advice. Include command-line examples, HAC screenshots described, log patterns to search for, and step-by-step diagnostic procedures. Target audience: SAP Commerce developers and support engineers. Length: ~3500-4500 words.
+Tone: War-story style with practical, actionable advice. Include command-line examples, HAC screenshots described, log patterns to search for, and step-by-step diagnostic procedures. Go deep into technical details — explain JVM diagnostic internals, thread lifecycle, memory management, and platform monitoring architecture where relevant. Target audience: SAP Commerce developers and support engineers. No word limit — cover each topic thoroughly.
 
 ## Article 14: Migrating to a New Version of SAP Commerce Cloud: A Practical Upgrade Guide
 ### Prompt:
@@ -297,4 +297,4 @@ Write a comprehensive, experience-driven article titled "Migrating to a New Vers
 - Real-world tips and lessons learned from multiple SAP Commerce version upgrades
 - Upgrade checklist: a comprehensive pre-upgrade, during-upgrade, and post-upgrade checklist
 
-Tone: Practical and advisory, written from the perspective of someone who has performed multiple version upgrades. Include configuration diff examples, command sequences, and a printable checklist. Target audience: SAP Commerce developers, tech leads, and architects planning version upgrades. Length: ~3500-4500 words.
+Tone: Practical and advisory, written from the perspective of someone who has performed multiple version upgrades. Include configuration diff examples, command sequences, and a printable checklist. Go deep into technical details — explain type system migration internals, Spring context changes, database schema evolution, and platform bootstrap mechanisms where relevant. Target audience: SAP Commerce developers, tech leads, and architects planning version upgrades. No word limit — cover each topic thoroughly.
