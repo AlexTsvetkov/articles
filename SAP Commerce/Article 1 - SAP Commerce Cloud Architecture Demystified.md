@@ -1,3 +1,9 @@
+---
+layout: default
+title: "SAP Commerce Cloud Architecture Demystified: A Practical Guide for Developers"
+description: "A deep dive into SAP Commerce Cloud architecture — extensions, type system, service layer, and design patterns explained for Java developers."
+---
+
 # SAP Commerce Cloud Architecture Demystified: A Practical Guide for Developers
 
 If you're a Java developer stepping into the SAP Commerce world — or a mid-level Commerce developer who wants to truly understand what's happening under the hood — this article is for you. We'll go beyond surface-level overviews and dig into the internals: the class hierarchies, the extension loading mechanism, the type system's relationship to the database, and the design patterns that make the platform tick.
