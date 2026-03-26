@@ -4,15 +4,6 @@ A collection of technical articles on SAP Commerce and Cloud Native Architecture
 
 🌐 **Published at**: [https://alextsvetkov.github.io/articles/](https://alextsvetkov.github.io/articles/)
 
-## Publishing Platforms
-
-| Platform | URL | Focus |
-|----------|-----|-------|
-| Dev.to | https://dev.to/ | Developer community, Markdown-native, tutorial-style |
-| Medium | https://medium.com/ | Narrative-driven, conversational technical content |
-| SAP Community | https://community.sap.com/ | Professional, SAP-ecosystem focused |
-| LinkedIn | https://www.linkedin.com/ | Thought-leadership, concise, business-relevant |
-
 ## Project Structure
 
 ```
