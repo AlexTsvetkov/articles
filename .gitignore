@@ -3,4 +3,5 @@
 *.iml
 *.iws
 *.ipr
-out/.DS_Store
+out/
+.DS_Store
