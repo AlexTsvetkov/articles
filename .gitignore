@@ -5,3 +5,7 @@
 *.ipr
 out/
 .DS_Store
+
+publish_remaining.sh
+publish_to_devto.sh
+publish_10_15.sh
