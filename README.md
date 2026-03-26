@@ -23,7 +23,7 @@ A collection of technical articles with platform-specific adaptations for publis
 └── SAP Commerce/
     ├── README.md              # Topic overview
     ├── prompts.md             # Article generation prompts
-    ├── Article 1 - *.md       # Base article (platform-neutral)
+    ├── 1 - *.md               # Base article (platform-neutral)
     ├── medium.com/            # Medium-adapted versions
     ├── dev.to/                # Dev.to-adapted versions
     ├── community.sap.com/    # SAP Community-adapted versions
