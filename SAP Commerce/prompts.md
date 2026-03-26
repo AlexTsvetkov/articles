@@ -261,3 +261,40 @@ Write a practical, experience-driven article titled "Troubleshooting SAP Commerc
 - Post-mortem practices: learning from incidents
 
 Tone: War-story style with practical, actionable advice. Include command-line examples, HAC screenshots described, log patterns to search for, and step-by-step diagnostic procedures. Target audience: SAP Commerce developers and support engineers. Length: ~3500-4500 words.
+
+## Article 14: Migrating to a New Version of SAP Commerce Cloud: A Practical Upgrade Guide
+### Prompt:
+Write a comprehensive, experience-driven article titled "Migrating to a New Version of SAP Commerce Cloud: A Practical Upgrade Guide." Cover:
+- Why keeping SAP Commerce up to date matters: security patches, new features, end-of-maintenance timelines, CCv2 compatibility
+- Understanding SAP Commerce versioning: major releases (1905, 2005, 2011, 2105, 2205, 2211), patch releases, and the yearly release cadence
+- Pre-upgrade assessment: analyzing your current customizations, deprecated API usage, extension compatibility matrix
+- Reading the release notes effectively: what to look for in "What's New", breaking changes, deprecated features, and removed APIs
+- Step-by-step upgrade process:
+  1. Set up a fresh installation of the target version
+  2. Compare and merge configuration files (local.properties, localextensions.xml, manifest.json)
+  3. Update items.xml definitions and handle type system changes
+  4. Fix compilation errors from deprecated/removed APIs
+  5. Run system update and verify database schema changes
+  6. Update Solr schema and re-index
+  7. Verify catalog synchronization
+  8. Run full regression test suite
+- Handling deprecated APIs and classes: finding replacements, using SAP's migration guides, search strategies for deprecated usage
+- Type system migration: handling changed or removed types, attribute changes, enum modifications
+- Spring framework upgrades: when SAP Commerce bumps Spring versions, common breaking changes
+- AddOn to Composable Storefront migration: moving from legacy JSP storefront to Spartacus
+- Spartacus/Composable Storefront version upgrades: Angular version bumps, library API changes, schematics usage
+- manifest.json updates for CCv2: new commerceSuiteVersion, extension changes, property adjustments
+- Database considerations: schema migration scripts, data compatibility, HANA-specific changes
+- Testing strategy for upgrades: what to test, regression test prioritization, smoke test checklist
+- Managing the upgrade in a team: branching strategy, parallel development during upgrade, feature freeze considerations
+- Common upgrade pitfalls and how to avoid them:
+  - Not reading the full release notes
+  - Skipping versions (jumping multiple major versions at once)
+  - Ignoring deprecation warnings in the current version
+  - Not testing catalog sync after upgrade
+  - Forgetting to update third-party integrations
+- Rollback planning: what to prepare if the upgrade goes wrong
+- Real-world tips and lessons learned from multiple SAP Commerce version upgrades
+- Upgrade checklist: a comprehensive pre-upgrade, during-upgrade, and post-upgrade checklist
+
+Tone: Practical and advisory, written from the perspective of someone who has performed multiple version upgrades. Include configuration diff examples, command sequences, and a printable checklist. Target audience: SAP Commerce developers, tech leads, and architects planning version upgrades. Length: ~3500-4500 words.
