@@ -1,3 +1,4 @@
+{% raw %}
 # Prompts for Adapting Articles to Publishing Platforms
 
 Use these prompts to adapt any generated article (or article prompt) to the specific formatting, tone, and audience expectations of each publishing platform.
@@ -240,3 +241,4 @@ For each version, adjust the tone, length, formatting requirements, and engageme
 
 Original prompt:
 [PASTE ARTICLE PROMPT HERE]
+{% endraw %}
