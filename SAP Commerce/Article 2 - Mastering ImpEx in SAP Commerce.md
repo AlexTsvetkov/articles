@@ -673,11 +673,13 @@ ImpEx isn't just for importing — you can export data too. This is invaluable f
 
 In the Hybris Administration Console (HAC), navigate to **Console → ImpEx Export**. Enter an export script:
 
+{% raw %}
 ```impex
 "#% impex.setTargetFile(""product-export.csv"");"
 INSERT_UPDATE Product;code[unique=true];name[lang=en];description[lang=en];approvalStatus(code);catalogVersion(catalog(id),version)
 "#% impex.exportItems(""SELECT {code},{name[en]},{description[en]},{approvalStatus},{catalogVersion} FROM {Product} WHERE {catalogVersion} IN ({{SELECT {pk} FROM {CatalogVersion} WHERE {catalog} IN ({{SELECT {pk} FROM {Catalog} WHERE {id}='myProductCatalog'}}) AND {version}='Online'}})"");"
 ```
+{% endraw %}
 
 ### Export via FlexibleSearch
 

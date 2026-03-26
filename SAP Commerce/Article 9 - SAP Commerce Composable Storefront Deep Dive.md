@@ -228,6 +228,7 @@ The content of each slot is entirely determined by the CMS configuration in the 
 
 To replace an out-of-the-box component with your custom implementation:
 
+{% raw %}
 ```typescript
 @Component({
   selector: 'app-custom-add-to-cart',
@@ -257,6 +258,7 @@ To replace an out-of-the-box component with your custom implementation:
 })
 export class CustomAddToCartComponent extends AddToCartComponent {
   loyaltyPoints = 0;
+{% endraw %}
 
   constructor(
     // Inject all parent dependencies
@@ -303,6 +305,7 @@ INSERT_UPDATE CMSFlexComponent;uid[unique=true];name;flexType;$catalogVersion
 
 **2. Create the Angular component:**
 
+{% raw %}
 ```typescript
 @Component({
   selector: 'app-loyalty-dashboard',
@@ -333,6 +336,7 @@ INSERT_UPDATE CMSFlexComponent;uid[unique=true];name;flexType;$catalogVersion
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+{% endraw %}
 export class LoyaltyDashboardComponent implements OnInit {
   account$: Observable<LoyaltyAccount>;
 

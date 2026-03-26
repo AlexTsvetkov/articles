@@ -958,10 +958,11 @@ WHERE {c.loyaltyTier} = ?tier
 
 ### Querying Enums
 
+{% raw %}
 ```sql
 -- Enum values are referenced by their enumeration code
-SELECT {pk} FROM {Customer} WHERE {loyaltyTier} = 
-    ({{SELECT {pk} FROM {EnumerationValue} WHERE {code} = 'GOLD' 
+SELECT {pk} FROM {Customer} WHERE {loyaltyTier} =
+    ({{SELECT {pk} FROM {EnumerationValue} WHERE {code} = 'GOLD'
        AND {Type} = ({{SELECT {pk} FROM {ComposedType} WHERE {code} = 'LoyaltyTier'}})}})
 
 -- Or using the simpler HybrisEnumValue approach with parameters
@@ -969,6 +970,7 @@ FlexibleSearchQuery query = new FlexibleSearchQuery(
     "SELECT {pk} FROM {Customer} WHERE {loyaltyTier} = ?tier");
 query.addQueryParameter("tier", LoyaltyTier.valueOf("GOLD"));
 ```
+{% endraw %}
 
 ---
 

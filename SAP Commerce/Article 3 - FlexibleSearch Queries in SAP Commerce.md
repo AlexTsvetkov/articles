@@ -1,3 +1,4 @@
+{% raw %}
 # FlexibleSearch Queries in SAP Commerce: The Complete Developer's Guide
 
 Every SAP Commerce developer writes FlexibleSearch queries daily. It's how you retrieve products, look up orders, debug data issues in HAC, and build the DAOs that power your services. Yet many developers treat it as "just SQL with curly braces" and miss the nuances that separate a query that works from one that performs well at scale.
@@ -937,3 +938,4 @@ FlexibleSearch is the primary data query mechanism in SAP Commerce. The key prin
 8. **Cache carefully** — enable query caching for stable reference data, not for frequently-changing entities
 
 FlexibleSearch is a tool you'll use every day on SAP Commerce projects. Invest in understanding it deeply, and it will pay dividends in debugging speed, query performance, and code quality.
+{% endraw %}
