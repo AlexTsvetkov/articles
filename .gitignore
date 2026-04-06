@@ -5,3 +5,6 @@
 *.ipr
 out/
 .DS_Store
+
+# Local-only files
+promotion.md
